@@ -31,8 +31,13 @@ body {
 .item-ingredient {
   display: inline-block;
   font-size: 12px;
-  margin: 10px 4px;
+  margin: 6px 2px;
   cursor: pointer;
+  border: solid 4px transparent;
+
+  &.selected {
+    border: solid 4px #FF5555;
+  }
 
   .thumbnail {
     background-color: rgb(210, 210, 210);
