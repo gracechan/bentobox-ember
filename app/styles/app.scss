@@ -1,7 +1,12 @@
 body {
   font-family: "Verdana";
   margin: 0;
-  background-color: rgb(220,220,220);
+  background-color: rgb(230,230,230);
+}
+
+.header-title {
+  margin: 10px 0px 20px 4px;
+  font-size: 18px;
 }
 
 #nav-header {
@@ -17,4 +22,27 @@ body {
 
 #main-stage {
   padding: 14px;
+}
+
+#grid-pick-ingredients {
+  font-size: 0;
+}
+
+.item-ingredient {
+  display: inline-block;
+  font-size: 12px;
+  margin: 10px 4px;
+  cursor: pointer;
+
+  .thumbnail {
+    background-color: rgb(210, 210, 210);
+    width: 150px;
+    height: 150px;
+  }
+
+  .label {
+    background-color: white;
+    height: 40px;
+    padding: 10px;
+  }
 }
