@@ -20,9 +20,9 @@ export default Ember.Component.extend({
       var category = this.get('ingredient.category');
 
       if (selectedService.isSelected(this.get('ingredient.id'))) {
-        selectedService.removeSelectedItem(id, name, category);
+        selectedService.removeSelectedItem(id);
       } else {
-        selectedService.addSelectedItem(id);
+        selectedService.addSelectedItem(id, name, category);
       }
     }
   }

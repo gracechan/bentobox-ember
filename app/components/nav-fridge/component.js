@@ -9,10 +9,21 @@ export default Ember.Component.extend({
   isCollapsed: true,
 
   numIngredients: Ember.computed.alias('selectedIngredientService.getCount'),
-  ingredientList: Ember.computed.alias('selectedIngredientService.getSelectedIngredients'),
-
-  showNumIcon: Ember.computed('numIngredients', function () {
+  hasIngredients: Ember.computed('numIngredients', function () {
     return this.get('numIngredients') > 0;
+  }),
+
+  ingredientList: Ember.computed('selectedIngredientService.revisionId', function () {
+    var ingredientData = this.get('selectedIngredientService.getSelectedIngredients');
+    var ingredientIds = this.get('selectedIngredientService.getSelectedIngredientIds');
+
+    var lst = ingredientIds.map(function (id) {
+      var name = ingredientData[id].name;
+      var category = ingredientData[id].category;
+      return { id: id, name: name, category: category };
+    });
+
+    return lst;
   }),
 
   actions: {

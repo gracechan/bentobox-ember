@@ -1,8 +1,16 @@
 <div class="icon-wrapper" {{action 'toggleContentList'}}>
   <div class="fridge-icon"></div>
-  {{#if showNumIcon}}
+  {{#if hasIngredients}}
     <div class="num-icon">{{numIngredients}}</div>
   {{/if}}
 </div>
-<div class="fridge-contents-list">Your fridge is empty</div>
+<div class="fridge-contents-list">
+  {{#if hasIngredients}}
+    {{#each ingredientList as |ingredient|}}
+      <div>{{ingredient.name}}</div>
+    {{/each}}
+  {{else}}
+    <span class="empty-text">Your fridge is empty</span>
+  {{/if}}
+</div>
 {{yield}}
