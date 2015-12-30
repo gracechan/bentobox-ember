@@ -46,6 +46,7 @@ body {
     .icon-wrapper {
       padding: 11px;
       background-color: #6F6F6F;
+      position: relative;
 
       .fridge-icon {
         width: 17px;
@@ -55,6 +56,19 @@ body {
         background-repeat: no-repeat;
         background-position: 0;
         display: block;
+      }
+
+      .num-icon {
+        position: absolute;
+        left: 3px;
+        top: 3px;
+        font-size: 10px;
+        background: #FF5555;
+        padding: 3px;
+        border-radius: 20px;
+        line-height: 10px;
+        min-width: 10px;
+        text-align: center;
       }
 
       &:hover {

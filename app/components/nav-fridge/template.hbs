@@ -1,5 +1,8 @@
 <div class="icon-wrapper" {{action 'toggleContentList'}}>
   <div class="fridge-icon"></div>
+  {{#if showNumIcon}}
+    <div class="num-icon">{{numIngredients}}</div>
+  {{/if}}
 </div>
 <div class="fridge-contents-list">Your fridge is empty</div>
 {{yield}}
