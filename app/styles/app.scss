@@ -1,5 +1,18 @@
 @import url(https://fonts.googleapis.com/css?family=Pacifico);
 
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+      background-color: rgb(200, 200, 200);
+}
+::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.2);
+}
+::-webkit-scrollbar-corner {
+      background-color: black;
+}
+
 body {
   font-family: "Verdana";
   margin: 0;
@@ -39,14 +52,14 @@ body {
 
   .nav-fridge {
     float: right;
-    cursor: pointer;
     display: inline-block;
     position: relative;
 
     .icon-wrapper {
       padding: 11px;
-      background-color: #6F6F6F;
+      background-color: #111111;
       position: relative;
+      cursor: pointer;
 
       .fridge-icon {
         width: 17px;
@@ -82,11 +95,47 @@ body {
       position: absolute;
       top: 50px;
       right: 0;
-      width: 300px;
-      background-color: #6F6F6F;
+      width: 200px;
+      background-color: #111111;
       color: #FFFFFF;
-      font-size: 14px;
-      padding: 14px;
+      font-size: 12px;
+
+      .contents-wrapper {
+        max-height: 220px;
+        overflow-y: auto;
+
+        .item-fridge-list {
+          margin: 4px;
+          padding: 2px 4px;
+          overflow: hidden;
+          text-overflow: ellipsis;
+          white-space: nowrap;
+
+          &:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+          }
+        }
+      }
+
+      .empty-text {
+        font-style: italic;
+        text-align: center;
+        padding: 14px;
+      }
+
+      .clear-all-btn {
+        text-align: center;
+        padding: 2px;
+        background-color: #FF5555;
+        margin: 4px;
+        margin-top: 0;
+        font-size: 11px;
+        cursor: pointer;
+
+        &:hover {
+          background-color: #FF6666;
+        }
+      }
     }
 
     &.collapsed {

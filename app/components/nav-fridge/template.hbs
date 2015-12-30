@@ -6,11 +6,14 @@
 </div>
 <div class="fridge-contents-list">
   {{#if hasIngredients}}
-    {{#each ingredientList as |ingredient|}}
-      <div>{{ingredient.name}}</div>
-    {{/each}}
+    <div class="contents-wrapper">
+      {{#each ingredientList as |ingredient|}}
+        {{item-fridge-list ingredient=ingredient}}
+      {{/each}}
+    </div>
+    <div class="clear-all-btn">CLEAR ALL</div>
   {{else}}
-    <span class="empty-text">Your fridge is empty</span>
+    <div class="empty-text">Your fridge is empty</div>
   {{/if}}
 </div>
 {{yield}}
