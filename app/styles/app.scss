@@ -43,9 +43,22 @@ body {
   .nav-fridge {
     float: right;
     padding: 11px;
+    cursor: pointer;
 
-    img {
+    .fridge-icon {
+      width: 17px;
+      height: 28px;
+      background-image: url('../fridge.svg');
+      background-size: 100%;
+      background-repeat: no-repeat;
+      background-position: 0;
       display: block;
+    }
+
+    &:hover {
+      .fridge-icon {
+        background-image: url('../fridge-hover.svg');
+      }
     }
   }
 }
