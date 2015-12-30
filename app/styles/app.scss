@@ -18,21 +18,18 @@ body {
   line-height: 22px;
   color: white;
 
-  background: #444444; /* Old browsers */
-  background: -moz-linear-gradient(top, #444444 0%, #111111 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #444444 0% ,#111111 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #444444 0% ,#111111 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#444444', endColorstr='#111111',GradientType=0 ); /* IE6-9 */
-
-  div {
-    display: inline-block;
-  }
+  background: #6F6F6F; /* Old browsers */
+  background: -moz-linear-gradient(top, #6F6F6F 0%, #111111 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, #6F6F6F 0% ,#111111 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, #6F6F6F 0% ,#111111 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6F6F6F', endColorstr='#111111',GradientType=0 ); /* IE6-9 */
 
   .logo-title {
     padding: 14px;
     font-family: 'Pacifico';
     font-size: 22px;
     cursor: pointer;
+    display: inline-block;
 
     user-select: none;
     -moz-user-select: none;
@@ -42,23 +39,45 @@ body {
 
   .nav-fridge {
     float: right;
-    padding: 11px;
     cursor: pointer;
+    display: inline-block;
+    position: relative;
 
-    .fridge-icon {
-      width: 17px;
-      height: 28px;
-      background-image: url('../fridge.svg');
-      background-size: 100%;
-      background-repeat: no-repeat;
-      background-position: 0;
-      display: block;
+    .icon-wrapper {
+      padding: 11px;
+      background-color: #6F6F6F;
+
+      .fridge-icon {
+        width: 17px;
+        height: 28px;
+        background-image: url('../fridge.svg');
+        background-size: 100%;
+        background-repeat: no-repeat;
+        background-position: 0;
+        display: block;
+      }
+
+      &:hover {
+        .fridge-icon {
+          background-image: url('../fridge-hover.svg');
+        }
+      }
     }
 
-    &:hover {
-      .fridge-icon {
-        background-image: url('../fridge-hover.svg');
-      }
+    .fridge-contents-list {
+      position: absolute;
+      top: 50px;
+      right: 0;
+      width: 300px;
+      background-color: #6F6F6F;
+      color: #FFFFFF;
+      font-size: 14px;
+      padding: 14px;
+    }
+
+    &.collapsed {
+      .icon-wrapper { background-color: transparent; }
+      .fridge-contents-list { display: none; }
     }
   }
 }
