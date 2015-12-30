@@ -2,16 +2,17 @@ import Ember from 'ember';
 
 // hash of selected ingredients
 var selectedIngredients = {};
+var selectedIds = [];
 
 export default Ember.Service.extend({
   revisionId: 0,
 
   getCount: Ember.computed('revisionId', function () {
-    return Object.keys(selectedIngredients).length;
+    return selectedIds.length;
   }),
 
   getSelectedIngredientIds: Ember.computed('revisionId', function () {
-    return Object.keys(selectedIngredients);
+    return selectedIds;
   }),
 
   getSelectedIngredients: Ember.computed('revisionId', function () {
@@ -28,6 +29,7 @@ export default Ember.Service.extend({
     }
 
     selectedIngredients[id] = { name: name, category: category };
+    selectedIds.push(id);
     this._incrementRevisionId();
   },
 
@@ -41,6 +43,7 @@ export default Ember.Service.extend({
     }
 
     delete selectedIngredients[id];
+    selectedIds.removeObject(id);
     this._incrementRevisionId();
   },
 
