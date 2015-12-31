@@ -107,12 +107,36 @@ body {
         .item-fridge-list {
           margin: 4px;
           padding: 2px 4px;
-          overflow: hidden;
-          text-overflow: ellipsis;
-          white-space: nowrap;
+          height: 22px;
+
+          .ingredient-name {
+            width: calc(100% - 12px); // 12px is the width of the xbtn
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            display: inline-block;
+          }
+
+          .xbtn {
+            display: none;
+          }
 
           &:hover {
             background-color: rgba(255, 255, 255, 0.1);
+
+            .xbtn {
+              display: block;
+              background-image: url('../xbtn.svg');
+              width: 12px;
+              height: 12px;
+              float: right;
+              margin: 5px 0;
+              cursor: pointer;
+
+              &:hover {
+                background-image: url('../xbtn-hover.svg');
+              }
+            }
           }
         }
       }
