@@ -47,6 +47,12 @@ export default Ember.Service.extend({
     this._incrementRevisionId();
   },
 
+  clearSelection: function () {
+    selectedIngredients = {};
+    selectedIds = [];
+    this._incrementRevisionId();
+  },
+
   _incrementRevisionId: function () {
     this.set('revisionId', this.get('revisionId') + 1);
   },

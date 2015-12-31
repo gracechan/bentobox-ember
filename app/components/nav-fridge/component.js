@@ -29,6 +29,10 @@ export default Ember.Component.extend({
   actions: {
     toggleContentList: function () {
       this.set('isCollapsed', !this.get('isCollapsed'));
+    },
+
+    clearContentList: function () {
+      this.get('selectedIngredientService').clearSelection();
     }
   }
 });

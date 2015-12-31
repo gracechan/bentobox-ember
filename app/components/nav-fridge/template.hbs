@@ -11,7 +11,7 @@
         {{item-fridge-list ingredient=ingredient}}
       {{/each}}
     </div>
-    <div class="clear-all-btn">CLEAR ALL</div>
+    <div class="clear-all-btn" {{action 'clearContentList'}}>CLEAR ALL</div>
   {{else}}
     <div class="empty-text">Your fridge is empty</div>
   {{/if}}
