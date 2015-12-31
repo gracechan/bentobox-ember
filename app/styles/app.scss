@@ -1,5 +1,10 @@
 @import url(https://fonts.googleapis.com/css?family=Pacifico);
 
+$theme-color-red: #ff5555;
+$theme-color-light-grey: #6f6f6f;
+$theme-color-dark-grey: #111111;
+$theme-color-background: #e6e6e6;
+
 ::-webkit-scrollbar {
   width: 6px;
 }
@@ -13,34 +18,28 @@
       background-color: black;
 }
 
-body {
-  font-family: "Verdana";
-  margin: 0;
-  background-color: rgb(230,230,230);
-}
-
-.header-title {
-  margin: 10px 0px 20px 4px;
-  font-size: 18px;
-}
+/******************************
+  NAVIGATION BAR
+*******************************/
+$navbar-height: 50px;
 
 .nav-header {
   position: fixed;
   width: 100%;
-  height: 50px;
-  line-height: 22px;
+  height: $navbar-height;
   color: white;
 
-  background: #6F6F6F; /* Old browsers */
-  background: -moz-linear-gradient(top, #6F6F6F 0%, #111111 100%); /* FF3.6-15 */
-  background: -webkit-linear-gradient(top, #6F6F6F 0% ,#111111 100%); /* Chrome10-25,Safari5.1-6 */
-  background: linear-gradient(to bottom, #6F6F6F 0% ,#111111 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#6F6F6F', endColorstr='#111111',GradientType=0 ); /* IE6-9 */
+  background: $theme-color-light-grey; /* Old browsers */
+  background: -moz-linear-gradient(top, $theme-color-light-grey 0%, $theme-color-dark-grey 100%); /* FF3.6-15 */
+  background: -webkit-linear-gradient(top, $theme-color-light-grey 0% ,$theme-color-dark-grey 100%); /* Chrome10-25,Safari5.1-6 */
+  background: linear-gradient(to bottom, $theme-color-light-grey 0% ,$theme-color-dark-grey 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$theme-color-light-grey', endColorstr='$theme-color-dark-grey',GradientType=0 ); /* IE6-9 */
 
   .logo-title {
     padding: 14px;
     font-family: 'Pacifico';
     font-size: 22px;
+    line-height: 22px;
     cursor: pointer;
     display: inline-block;
 
@@ -57,7 +56,7 @@ body {
 
     .icon-wrapper {
       padding: 11px;
-      background-color: #111111;
+      background-color: $theme-color-dark-grey;
       position: relative;
       cursor: pointer;
 
@@ -76,7 +75,7 @@ body {
         left: 3px;
         top: 3px;
         font-size: 10px;
-        background: #FF5555;
+        background: $theme-color-red;
         padding: 3px;
         border-radius: 20px;
         line-height: 10px;
@@ -93,12 +92,13 @@ body {
 
     .fridge-contents-list {
       position: absolute;
-      top: 50px;
+      top: $navbar-height;
       right: 0;
       width: 200px;
-      background-color: #111111;
+      background-color: $theme-color-dark-grey;
       color: #FFFFFF;
       font-size: 12px;
+      line-height: 22px;
 
       .contents-wrapper {
         max-height: 220px;
@@ -110,7 +110,7 @@ body {
           height: 22px;
 
           .ingredient-name {
-            width: calc(100% - 12px); // 12px is the width of the xbtn
+            width: calc(100% - 12px); /* 12px is the width of the xbtn */
             overflow: hidden;
             text-overflow: ellipsis;
             white-space: nowrap;
@@ -150,7 +150,7 @@ body {
       .clear-all-btn {
         text-align: center;
         padding: 2px;
-        background-color: #FF5555;
+        background-color: $theme-color-red;
         margin: 4px;
         margin-top: 0;
         font-size: 11px;
@@ -169,13 +169,32 @@ body {
   }
 }
 
-#main-stage {
-  padding: 14px;
-  padding-top: 64px;
+
+/******************************
+  MAIN STAGE
+*******************************/
+body {
+  font-family: "Verdana";
+  margin: 0;
+  background-color: $theme-color-background;
 }
 
+.header-title {
+  margin: 10px 0px 20px 4px;
+  font-size: 18px;
+}
+
+#main-stage {
+  padding: 14px;
+  padding-top: $navbar-height + 14px;
+}
+
+
+/******************************
+  PICK INGREDIENTS PAGE
+*******************************/
 #grid-pick-ingredients {
-  font-size: 0;
+  font-size: 0; /* this gets rid of extra spacing from display: inline-block in the grid */
 }
 
 .item-ingredient {
@@ -186,7 +205,7 @@ body {
   border: solid 4px transparent;
 
   &.selected {
-    border: solid 4px #FF5555;
+    border: solid 4px $theme-color-red;
   }
 
   .thumbnail {
