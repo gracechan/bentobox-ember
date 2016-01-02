@@ -175,11 +175,10 @@ $navbar-height: 50px;
   line-height: 22px;
   font-size: 12px;
   cursor: pointer;
-  margin: 4px;
+  margin: 6px;
   padding: 8px 14px;
-  background: black;
+  background-image: linear-gradient(to bottom, #ff5555 0%, #991111 100%);
   border-radius: 20px;
-  border: solid 2px rgb(100, 100, 100);
 
   .recipe-icon {
     background-image: url('../recipebox.svg');
@@ -206,10 +205,13 @@ $navbar-height: 50px;
   }
 
   &:hover {
-    border: solid 2px black;
-
     .recipe-icon { background-image: url('../recipebox-hover.svg'); }
     .recipe-btn-text { color: rgb(225, 225, 225); }
+  }
+
+  &:active {
+    background-image: none;
+    background-color: #771111;
   }
 }
 
