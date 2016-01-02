@@ -169,6 +169,50 @@ $navbar-height: 50px;
   }
 }
 
+.find-recipes-btn {
+  float: right;
+  height: 22px;
+  line-height: 22px;
+  font-size: 12px;
+  cursor: pointer;
+  margin: 4px;
+  padding: 8px 14px;
+  background: black;
+  border-radius: 20px;
+  border: solid 2px rgb(100, 100, 100);
+
+  .recipe-icon {
+    background-image: url('../recipebox.svg');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: 0;
+    width: 25px;
+    height: 20px;
+    display: inline-block;
+    vertical-align: top;
+    padding: 1px 0;
+  }
+
+  .recipe-btn-text {
+    display: inline-block;
+    font-size: 10px;
+    line-height: 11px;
+    max-width: 50px;
+
+    user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -webkit-user-select: none;
+  }
+
+  &:hover {
+    border: solid 2px black;
+
+    .recipe-icon { background-image: url('../recipebox-hover.svg'); }
+    .recipe-btn-text { color: rgb(225, 225, 225); }
+  }
+}
+
 
 /******************************
   MAIN STAGE
